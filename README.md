@@ -1,10 +1,10 @@
 # GGJ-2026
-&lt;placeholder>
-
-&lt;Daniel Ellett
-&lt;Freddie Lane
-&lt;Harrison Rockwell-Jones
-&lt;Ayrton Dawkins
-&lt;Matilda Muir
-&lt;
-&lt;.gitignore is Unity
+&lt;placeholder><br/>
+<br/>
+Daniel Ellett<br/>
+Freddie Lane<br/>
+Harrison Rockwell-Jones<br/>
+Ayrton Dawkins<br/>
+Matilda Muir<br/>
+<br/>
+.gitignore is Unity<br/>
