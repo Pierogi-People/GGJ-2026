@@ -1,11 +1,21 @@
 using UnityEngine;
+using UnityEngine.InputSystem.LowLevel;
 
 public class PlayerManager : MonoBehaviour
 {
+    private GameObject maskPanel;
+    private GameObject handPanel;
+
+    public float handDuration;
+    private bool handActive;
+    private float handTimer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        maskPanel = GameObject.Find("MaskPanel");
+        maskPanel.SetActive(false);
+        handPanel = GameObject.Find("HandPanel");
+        handPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -20,6 +30,29 @@ public class PlayerManager : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.I))
             {
                 ExitWater();
+            }
+
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                ToggleMask();
+            }
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (!handActive)
+                {
+                    ActivateHand();
+                }
+            }
+        }
+
+        if (handActive)
+        {
+            handTimer -= Time.deltaTime;
+            if (handTimer < 0)
+            {
+                handPanel.SetActive(false);
+                handActive = false;
             }
         }
     }
@@ -36,5 +69,17 @@ public class PlayerManager : MonoBehaviour
         gameObject.GetComponent<Rigidbody>().useGravity = true;
         gameObject.GetComponent<WaterMovement>().enabled = false;
         gameObject.GetComponent<PlayerMovement>().enabled = true;
+    }
+
+    void ToggleMask()
+    {
+        maskPanel.SetActive(!maskPanel.activeSelf);
+    }
+
+    void ActivateHand()
+    {
+        handPanel.SetActive(true);
+        handActive = true;
+        handTimer = handDuration;
     }
 }
