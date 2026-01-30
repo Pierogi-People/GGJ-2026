@@ -6,6 +6,8 @@ public class WaterMovement : MonoBehaviour
     private Rigidbody Rigid;
     public float MouseSensitivity;
     public float MoveSpeed;
+    private float vert;
+    private float hori;
     #endregion
 
     private void Start()
@@ -15,7 +17,28 @@ public class WaterMovement : MonoBehaviour
 
     void Update()
     {
-        Rigid.MoveRotation(Rigid.rotation * Quaternion.Euler(new Vector3(-(Input.GetAxis("Mouse Y") * MouseSensitivity), Input.GetAxis("Mouse X") * MouseSensitivity, 0)));
-        Rigid.MovePosition(transform.position + (transform.forward * Input.GetAxis("Vertical") * MoveSpeed) + (transform.right * Input.GetAxis("Horizontal") * MoveSpeed));
+
+
+        if (Input.GetAxis("Vertical") == 0)
+        {
+            vert = Input.GetAxis("Vertical") * MoveSpeed;
+        }
+        else
+        {
+           
+        }
+
+        if (Input.GetAxis("Horizontal") == 0)
+        {
+            hori = Input.GetAxis("Horizontal") * MoveSpeed;
+        }
+        else
+        {
+
+        }
+
+
+            Rigid.MoveRotation(Rigid.rotation * Quaternion.Euler(new Vector3(-(Input.GetAxis("Mouse Y") * MouseSensitivity), Input.GetAxis("Mouse X") * MouseSensitivity, 0)));
+        Rigid.MovePosition(transform.position + (transform.forward * vert) + (transform.right * hori));
     }
 }
