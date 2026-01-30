@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class WaterMovement : MonoBehaviour
@@ -8,6 +9,7 @@ public class WaterMovement : MonoBehaviour
     public float MoveSpeed;
     private float vert;
     private float hori;
+    public float driftDistance;
     #endregion
 
     private void Start()
@@ -17,28 +19,95 @@ public class WaterMovement : MonoBehaviour
 
     void Update()
     {
-
-
-        if (Input.GetAxis("Vertical") == 0)
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
-            vert = Input.GetAxis("Vertical") * MoveSpeed;
+            if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
+            {
+                horiDropoff();
+            }
+            else if (Input.GetKey(KeyCode.A)) {
+                hori = -MoveSpeed;
+            }
+            else
+            {
+                hori = MoveSpeed;
+            }
         }
         else
         {
-           
+            horiDropoff();
         }
 
-        if (Input.GetAxis("Horizontal") == 0)
+
+        if (Input.GetKey(KeyCode.W) || (Input.GetKey(KeyCode.S)))
         {
-            hori = Input.GetAxis("Horizontal") * MoveSpeed;
+            if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S))
+            {
+                vertDropoff();
+            }
+            else if (Input.GetKey(KeyCode.W))
+            {
+                vert = MoveSpeed;
+            }
+            else
+            {
+                vert = -MoveSpeed;
+            }
         }
         else
         {
-
+            vertDropoff();
         }
 
+        Rigid.MoveRotation(Rigid.rotation * Quaternion.Euler(new Vector3(-(Input.GetAxis("Mouse Y") * MouseSensitivity), Input.GetAxis("Mouse X") * MouseSensitivity, 0)));
+        Rigid.MovePosition(Rigid.transform.position + (Rigid.transform.forward * vert) + (Rigid.transform.right * hori));
+    }
 
-            Rigid.MoveRotation(Rigid.rotation * Quaternion.Euler(new Vector3(-(Input.GetAxis("Mouse Y") * MouseSensitivity), Input.GetAxis("Mouse X") * MouseSensitivity, 0)));
-        Rigid.MovePosition(transform.position + (transform.forward * vert) + (transform.right * hori));
+    private void vertDropoff()
+    {
+        if (vert == 0)
+        {
+            return;
+        }
+        else if (vert < 0)
+        {
+            vert += driftDistance * Time.deltaTime;
+            if (vert > 0)
+            {
+                vert = 0;
+            }
+        }
+        else if (vert > 0)
+        {
+            vert -= driftDistance * Time.deltaTime;
+            if (vert < 0)
+            {
+                vert = 0;
+            }
+        }
+    }
+
+    private void horiDropoff()
+    {
+        if (hori == 0)
+        {
+            return;
+        }
+        else if (hori < 0)
+        {
+            hori += driftDistance * Time.deltaTime;
+            if (hori > 0)
+            {
+                hori = 0;
+            }
+        }
+        else if (hori > 0)
+        {
+            hori -= driftDistance * Time.deltaTime;
+            if (hori < 0)
+            {
+                hori = 0;
+            }
+        }
     }
 }
