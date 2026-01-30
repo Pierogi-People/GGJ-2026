@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody Rigid;
     public float MouseSensitivity;
     public float MoveSpeed;
+    public float sprintMultiplier;
     #endregion
 
     private void Start()
@@ -15,7 +16,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        float multi = 1;
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            multi = sprintMultiplier;
+        }
+
         Rigid.MoveRotation(Rigid.rotation * Quaternion.Euler(new Vector3(0, Input.GetAxis("Mouse X") * MouseSensitivity, 0)));
-        Rigid.MovePosition(transform.position + (transform.forward * Input.GetAxis("Vertical") * MoveSpeed) + (transform.right * Input.GetAxis("Horizontal") * MoveSpeed));
+        Rigid.MovePosition(transform.position + (transform.forward * Input.GetAxis("Vertical") * (MoveSpeed * multi)) + (transform.right * Input.GetAxis("Horizontal") * (MoveSpeed * multi)));
     }
 }
