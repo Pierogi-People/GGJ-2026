@@ -944,6 +944,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2153292628658261592, guid: d40214a57bb6714488018a0f1b7feb3e, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153292628658261592, guid: d40214a57bb6714488018a0f1b7feb3e, type: 3}
+      propertyPath: m_LinearDamping
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153292628658261592, guid: d40214a57bb6714488018a0f1b7feb3e, type: 3}
+      propertyPath: m_AngularDamping
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3121844194513593374, guid: d40214a57bb6714488018a0f1b7feb3e, type: 3}
       propertyPath: m_Name
       value: WaterPlayer
