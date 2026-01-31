@@ -16,6 +16,8 @@ TagManager:
   - code_9
   - code_6
   - Breadkey
+  - TeleportingPlane
+  - IntroVideo
   layers:
   - Default
   - TransparentFX
