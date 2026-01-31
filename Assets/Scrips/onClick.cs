@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngineInternal;
 
 public class onClick : MonoBehaviour
 {
@@ -16,6 +17,22 @@ public class onClick : MonoBehaviour
                 if (hit.transform.tag == "Breadkey")
                 {
                     hit.transform.gameObject.SetActive(false);
+                }
+                if(hit.transform.tag == "code_0")
+                {
+                    hit.transform.gameObject.GetComponent<CodePuzzle>().Count += 1;
+                }
+                if(hit.transform.tag == "code_1")
+                {
+                    hit.transform.gameObject.GetComponent<CodePuzzle2>().Count += 1;
+                }
+                if(hit.transform.tag == "code_2")
+                {
+                    hit.transform.gameObject.GetComponent<CodePuzzle3>().Count += 1;
+                }
+                if(hit.transform.tag == "code_3")
+                {
+                    hit.transform.gameObject.GetComponent<CodePuzzle4>().Count += 1;
                 }
             }
         }
