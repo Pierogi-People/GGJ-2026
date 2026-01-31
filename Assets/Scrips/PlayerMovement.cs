@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     public float lowerCameraBounds;
     private float currentTilt;
     public float tiltSpeed;
+    private GameObject maskPanel;
+    public bool maskEnabledDefault = false;
     #endregion
 
     private void Start()
@@ -19,6 +21,9 @@ public class PlayerMovement : MonoBehaviour
         Rigid = gameObject.GetComponent<Rigidbody>();
         Cam = Camera.main;
         currentTilt = 0f;
+
+        maskPanel = GameObject.Find("MaskPanel");
+        maskPanel.SetActive(maskEnabledDefault);
     }
 
     void Update()
@@ -38,5 +43,15 @@ public class PlayerMovement : MonoBehaviour
             currentTilt = lowerCameraBounds;
         }
         Cam.transform.localRotation = new Quaternion(currentTilt, 0, 0, 1);
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            ToggleMask();
+        }
+    }
+
+    void ToggleMask()
+    {
+        maskPanel.SetActive(!maskPanel.activeSelf);
     }
 }

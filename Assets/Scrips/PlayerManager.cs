@@ -3,7 +3,6 @@ using UnityEngine.InputSystem.LowLevel;
 
 public class PlayerManager : MonoBehaviour
 {
-    private GameObject maskPanel;
     private GameObject handPanel;
     private GameObject leftHandPanel;
 
@@ -17,8 +16,6 @@ public class PlayerManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        maskPanel = GameObject.Find("MaskPanel");
-        maskPanel.SetActive(false);
         handPanel = GameObject.Find("HandPanel");
         handPanel.SetActive(false);
         leftHandPanel = GameObject.Find("LeftHandPanel");
@@ -27,45 +24,23 @@ public class PlayerManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = false;
-
-        if (gameObject.GetComponent<WaterMovement>().enabled)
-        {
-            maskPanel.SetActive(!maskPanel.activeSelf);
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Application.isEditor)
+        if (Input.GetMouseButtonDown(0))
         {
-            if (Input.GetKeyDown(KeyCode.U))
+            if (!handActive)
             {
-                EnterWater();
+                ActivateLeftHand();
             }
-            else if (Input.GetKeyDown(KeyCode.I))
+        }
+        else if (Input.GetMouseButtonDown(1))
+        {
+            if (!handActive)
             {
-                ExitWater();
-            }
-
-            if (Input.GetKeyDown(KeyCode.O))
-            {
-                ToggleMask();
-            }
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                if (!handActive)
-                {
-                    ActivateLeftHand();
-                }
-            }
-            else if (Input.GetMouseButtonDown(1))
-            {
-                if (!handActive)
-                {
-                    ActivateHand();
-                }
+                ActivateHand();
             }
         }
 
@@ -90,25 +65,6 @@ public class PlayerManager : MonoBehaviour
                 handActive = false;
             }
         }
-    }
-
-    void EnterWater()
-    {
-        gameObject.GetComponent<Rigidbody>().useGravity = false;
-        gameObject.GetComponent<PlayerMovement>().enabled = false;
-        gameObject.GetComponent<WaterMovement>().enabled = true;
-    }
-
-    void ExitWater()
-    {
-        gameObject.GetComponent<Rigidbody>().useGravity = true;
-        gameObject.GetComponent<WaterMovement>().enabled = false;
-        gameObject.GetComponent<PlayerMovement>().enabled = true;
-    }
-
-    void ToggleMask()
-    {
-        maskPanel.SetActive(!maskPanel.activeSelf);
     }
 
     void ActivateLeftHand()

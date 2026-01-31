@@ -10,11 +10,15 @@ public class WaterMovement : MonoBehaviour
     private float vert;
     private float hori;
     public float driftDistance;
+    private GameObject maskPanel;
     #endregion
 
     private void Start()
     {
         Rigid = gameObject.GetComponent<Rigidbody>();
+
+        maskPanel = GameObject.Find("MaskPanel");
+        maskPanel.SetActive(true);
     }
 
     void Update()
