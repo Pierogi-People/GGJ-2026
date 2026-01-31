@@ -1,23 +1,17 @@
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class FadeToBlack : MonoBehaviour
 {
     public float fadeRate;
 
-    private bool fadingOut;
-    private bool fadingIn;
-    private float alpha;
-    public bool completedFade;
+    private bool fadingOut = false;
+    private bool fadingIn = false;
+    private float alpha = 1f;
+    public bool completedFade = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        fadingIn = false;
-        fadingOut = false;
-        completedFade = false;
-        alpha = 0.0f;
     }
 
     // Update is called once per frame
@@ -25,12 +19,11 @@ public class FadeToBlack : MonoBehaviour
     {
         if (fadingIn)
         {
-            alpha -= fadeRate * Time.deltaTime;
+            alpha -= (fadeRate * Time.deltaTime) / 5;
             if (alpha < 0.0f)
             {
                 alpha = 0.0f;
                 fadingIn = false;
-                completedFade = true;
             }
             gameObject.GetComponent<UnityEngine.UI.Image>().color = new Color(0, 0, 0, alpha);
         }
