@@ -10,6 +10,10 @@ public class PlayerManager : MonoBehaviour
     public float handDuration;
     private bool handActive;
     private float handTimer;
+
+    public float timeBeforeFadeIn = 1f;
+
+    private bool fadeTriggered = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -62,6 +66,17 @@ public class PlayerManager : MonoBehaviour
                 {
                     ActivateHand();
                 }
+            }
+        }
+
+        if (!fadeTriggered)
+        {
+            timeBeforeFadeIn -= Time.deltaTime;
+
+            if (timeBeforeFadeIn < 0)
+            {
+                GameObject.Find("Black").GetComponent<FadeToBlack>().fadeIn();
+                fadeTriggered = true;
             }
         }
 

@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e21b6fabb2aefe641835233dbb953f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handDuration: 1
+  handDuration: 0.5
 --- !u!33 &6149079247568004518
 MeshFilter:
   m_ObjectHideFlags: 0

@@ -34,7 +34,7 @@ public class CodePuzzle : MonoBehaviour
         }
         if (Count == 1)
         {
-            Check1 = false;
+            Check1 = true;
             CodeMaterial.mainTexture = Code1;
         }
         if (Count == 2)
