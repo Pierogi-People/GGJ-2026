@@ -16,6 +16,10 @@ public class PlayerManager : MonoBehaviour
         maskPanel.SetActive(false);
         handPanel = GameObject.Find("HandPanel");
         handPanel.SetActive(false);
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame

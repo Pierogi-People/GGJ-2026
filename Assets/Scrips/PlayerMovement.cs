@@ -23,12 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        float multi = 1;
-
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            multi = sprintMultiplier;
-        }
+        float multi = Input.GetKey(KeyCode.LeftShift) ? sprintMultiplier : 1;
 
         Rigid.MoveRotation(Rigid.rotation * Quaternion.Euler(new Vector3(0, Input.GetAxis("Mouse X") * MouseSensitivity, 0)));
         Rigid.MovePosition(transform.position + (transform.forward * Input.GetAxis("Vertical") * (MoveSpeed * multi)) + (transform.right * Input.GetAxis("Horizontal") * (MoveSpeed * multi)));
