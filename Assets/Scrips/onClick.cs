@@ -6,7 +6,7 @@ public class onClick : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = new Ray (origin: Camera.main.transform.position, direction: Camera.main.transform.forward);
             if (Physics.Raycast(ray, out RaycastHit hit, 500f))
             {
                 if (hit.transform.tag == "Puzzle")

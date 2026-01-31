@@ -286,6 +286,9 @@ MonoBehaviour:
   MouseSensitivity: 0.75
   MoveSpeed: 0.05
   sprintMultiplier: 2
+  upperCameraBounds: 0.2
+  lowerCameraBounds: -0.2
+  tiltSpeed: 2
 --- !u!114 &7800941039070197542
 MonoBehaviour:
   m_ObjectHideFlags: 0
