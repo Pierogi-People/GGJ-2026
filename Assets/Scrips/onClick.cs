@@ -9,7 +9,10 @@ public class onClick : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit, 500f))
             {
-                hit.transform.rotation *= Quaternion.Euler(0, 0, 90f);
+                if (hit.transform.tag == "Puzzle")
+                {
+                    hit.transform.rotation *= Quaternion.Euler(0, 0, 90f);
+                }
             }
         }
     }
