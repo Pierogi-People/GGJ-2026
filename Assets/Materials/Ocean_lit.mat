@@ -1,6 +1,10 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<<< HEAD:Assets/Materials/Ocean_lit.mat
 --- !u!114 &-5482155214707099418
+========
+--- !u!114 &-7457888557553470139
+>>>>>>>> origin/main:Assets/Materials/Metal/flat-lay-metal-surface.mat
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +24,13 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<<< HEAD:Assets/Materials/Ocean_lit.mat
   m_Name: Ocean_lit
   m_Shader: {fileID: -6465566751694194690, guid: 540fad18a0a8a4c41899662f372e13c1, type: 3}
+========
+  m_Name: flat-lay-metal-surface
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+>>>>>>>> origin/main:Assets/Materials/Metal/flat-lay-metal-surface.mat
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -30,7 +39,8 @@ Material:
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap: {}
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses:
   - MOTIONVECTORS
   m_LockedProperties: 
@@ -38,7 +48,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 9ed70ed0c92d4d340b952e77731bba50, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -62,7 +72,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 9ed70ed0c92d4d340b952e77731bba50, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -81,6 +91,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+<<<<<<<< HEAD:Assets/Materials/Ocean_lit.mat
     - _Texture2D:
         m_Texture: {fileID: 2800000, guid: dff1d2986cbacdc4f8a6cf416228915b, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -93,6 +104,8 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+========
+>>>>>>>> origin/main:Assets/Materials/Metal/flat-lay-metal-surface.mat
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -122,7 +135,10 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
+<<<<<<<< HEAD:Assets/Materials/Ocean_lit.mat
     - _Frequency: 0.5
+========
+>>>>>>>> origin/main:Assets/Materials/Metal/flat-lay-metal-surface.mat
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
