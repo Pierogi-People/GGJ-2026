@@ -44,7 +44,7 @@ public class CodePuzzle3 : MonoBehaviour
         }
         if (Count == 3)
         {
-            Check3 = false;
+            Check3 = true;
             CodeMaterial.mainTexture = Code3;
         }
         if (Count == 4)
@@ -64,7 +64,7 @@ public class CodePuzzle3 : MonoBehaviour
         }
         if (Count == 7)
         {
-            Check3 = true;
+            Check3 = false;
             CodeMaterial.mainTexture = Code7;
         }
         if (Count == 8)
