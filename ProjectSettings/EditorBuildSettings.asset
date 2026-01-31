@@ -8,6 +8,24 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PlayerMovementScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/SwimmingScene.unity
+    guid: 8cc289bac94927341b2c7c610942352a
+  - enabled: 1
+    path: Assets/Scenes/Puzzle_1.unity
+    guid: 2ca9235e9a130b847b81830fc821a3cd
+  - enabled: 1
+    path: Assets/Scenes/Puzzle Template.unity
+    guid: 25dd150a8e743bb45ac3016f9ce5010f
+  - enabled: 1
+    path: Assets/Scenes/Puzzle 3.unity
+    guid: 4df139d2ddaed8f488c655389638d955
+  - enabled: 1
+    path: Assets/Scenes/Puzzle 2.unity
+    guid: 8c6451fd000697045a5342f749257d0b
+  - enabled: 1
+    path: Assets/Scenes/above_ocean.unity
+    guid: dd64f4e1607c46640af0f166e573497d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -32,8 +32,7 @@ public class BunkerEntrance : MonoBehaviour
         {
             if (blackScreen.GetComponent<FadeToBlack>().completedFade)
             {
-                Debug.Log("Are we here yet?");
-                SceneManager.LoadScene("Puzzle1");
+                SceneManager.LoadScene("Puzzle_1");
                 awaitingFade = false;
             }
         }

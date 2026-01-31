@@ -44,6 +44,10 @@ PrefabInstance:
       propertyPath: driftDistance
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 8084522103174660327, guid: 6b55edd2e4ad92747805c4d06cdae3d3, type: 3}
+      propertyPath: handDuration
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8102333016124311202, guid: 6b55edd2e4ad92747805c4d06cdae3d3, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
