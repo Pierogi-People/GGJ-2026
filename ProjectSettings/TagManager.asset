@@ -18,6 +18,7 @@ TagManager:
   - Breadkey
   - TeleportingPlane
   - IntroVideo
+  - ExitLight
   layers:
   - Default
   - TransparentFX

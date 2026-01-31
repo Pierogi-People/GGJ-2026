@@ -25,9 +25,11 @@ public class PuzzleComplete : MonoBehaviour
 
             if (Mathf.Abs(zRotation) > 1f)
             {
+                
                 return false;
             }
         }
+        
         return true;
     }
 
@@ -36,6 +38,12 @@ public class PuzzleComplete : MonoBehaviour
         if (!completed && TileRotationCorrect())
         {
             completed = true;
+            Debug.Log("Puzzle Complete");
+            
+        }
+        if(GameObject.Find("RotationPuzzle").GetComponent<PuzzleComplete>().completed)
+        {
+            GameObject.Find("ExitLight").GetComponent<Light>().color = Color.green;
         }
 
         if (playerInside && Input.GetKeyDown(KeyCode.F))
@@ -43,6 +51,7 @@ public class PuzzleComplete : MonoBehaviour
             Debug.Log("Hit Inside");
             if (GameObject.Find("RotationPuzzle").GetComponent<PuzzleComplete>().completed)
             {
+
                 Debug.Log("Puzzle complete");
                 awaitingFade = true;
                 blackScreen.GetComponent<FadeToBlack>().fadeOut();
