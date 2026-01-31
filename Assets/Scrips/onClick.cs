@@ -13,6 +13,11 @@ public class onClick : MonoBehaviour
                 {
                     hit.transform.rotation *= Quaternion.Euler(0, 0, 90f);
                 }
+                if (hit.transform.tag == "Breadkey")
+                {
+                    Debug.Log("register");
+                    hit.transform.gameObject.SetActive(false);
+                }
             }
         }
     }

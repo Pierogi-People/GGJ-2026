@@ -5,6 +5,7 @@ public class PlayerManager : MonoBehaviour
 {
     private GameObject maskPanel;
     private GameObject handPanel;
+    private GameObject leftHandPanel;
 
     public float handDuration;
     private bool handActive;
@@ -16,10 +17,17 @@ public class PlayerManager : MonoBehaviour
         maskPanel.SetActive(false);
         handPanel = GameObject.Find("HandPanel");
         handPanel.SetActive(false);
+        leftHandPanel = GameObject.Find("LeftHandPanel");
+        leftHandPanel.SetActive(false);
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = false;
+
+        if (gameObject.GetComponent<WaterMovement>().enabled)
+        {
+            maskPanel.SetActive(!maskPanel.activeSelf);
+        }
     }
 
     // Update is called once per frame
@@ -45,6 +53,13 @@ public class PlayerManager : MonoBehaviour
             {
                 if (!handActive)
                 {
+                    ActivateLeftHand();
+                }
+            }
+            else if (Input.GetMouseButtonDown(1))
+            {
+                if (!handActive)
+                {
                     ActivateHand();
                 }
             }
@@ -56,6 +71,7 @@ public class PlayerManager : MonoBehaviour
             if (handTimer < 0)
             {
                 handPanel.SetActive(false);
+                leftHandPanel.SetActive(false);
                 handActive = false;
             }
         }
@@ -78,6 +94,13 @@ public class PlayerManager : MonoBehaviour
     void ToggleMask()
     {
         maskPanel.SetActive(!maskPanel.activeSelf);
+    }
+
+    void ActivateLeftHand()
+    {
+        leftHandPanel.SetActive(true);
+        handActive = true;
+        handTimer = handDuration;
     }
 
     void ActivateHand()
