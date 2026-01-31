@@ -59,7 +59,10 @@ public class WaterMovement : MonoBehaviour
             vertDropoff();
         }
 
+
+
         Rigid.MoveRotation(Rigid.rotation * Quaternion.Euler(new Vector3(-(Input.GetAxis("Mouse Y") * MouseSensitivity), Input.GetAxis("Mouse X") * MouseSensitivity, 0)));
+
         Rigid.MovePosition(Rigid.transform.position + (Rigid.transform.forward * vert) + (Rigid.transform.right * hori));
     }
 
