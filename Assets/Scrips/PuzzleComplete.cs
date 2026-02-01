@@ -10,6 +10,7 @@ public class PuzzleComplete : MonoBehaviour
     private bool playerInside = false;
     private GameObject blackScreen;
     private bool awaitingFade = false;
+    public GameObject breadKey;
 
     private void Start()
     {
@@ -35,34 +36,80 @@ public class PuzzleComplete : MonoBehaviour
 
     void Update()
     {
-        if (!completed && TileRotationCorrect())
+        if (!completed)
         {
-            completed = true;
-            Debug.Log("Puzzle Complete");
+            if (SceneManager.GetActiveScene().name == "Puzzle_1") { 
+                if (TileRotationCorrect())
+                {
+                    completed = true;
+                    Debug.Log("Puzzle Complete");
+                }
+            }
+            if (SceneManager.GetActiveScene().name == "Puzzle_2")
+            {
+                if (GameObject.Find("BreadKey") == null)
+                {
+                    completed = true;
+                    Debug.Log("bread Complete");
+                }
+            }
             
         }
-        if(GameObject.Find("RotationPuzzle").GetComponent<PuzzleComplete>().completed)
+        if(SceneManager.GetActiveScene().name == "Puzzle_1")
         {
-            GameObject.Find("ExitLight").GetComponent<Light>().color = Color.green;
-        }
-
-        if (playerInside && Input.GetKeyDown(KeyCode.F))
-        {
-            Debug.Log("Hit Inside");
             if (GameObject.Find("RotationPuzzle").GetComponent<PuzzleComplete>().completed)
             {
-
-                Debug.Log("Puzzle complete");
-                awaitingFade = true;
-                blackScreen.GetComponent<FadeToBlack>().fadeOut();
+                GameObject.Find("ExitLight").GetComponent<Light>().color = Color.green;
+            }
+        }else if (SceneManager.GetActiveScene().name == "Puzzle_2")
+        {
+            if (GameObject.Find("BreadKey") == null)
+            {
+                GameObject.Find("ExitLight").GetComponent<Light>().color = Color.green;
+                Debug.Log("bread Complete");
             }
         }
+
+
+            if (playerInside && Input.GetKeyDown(KeyCode.F))
+            {
+                Debug.Log("Hit Inside");
+
+                if(SceneManager.GetActiveScene().name == "Puzzle_1")
+            {
+                if (GameObject.Find("RotationPuzzle").GetComponent<PuzzleComplete>().completed)
+                {
+                    Debug.Log("Puzzle complete");
+                    awaitingFade = true;
+                    blackScreen.GetComponent<FadeToBlack>().fadeOut();
+                }
+            }
+                if (SceneManager.GetActiveScene().name == "Puzzle_2")
+                {
+                    if (GameObject.Find("BreadKey") == null)
+                    {
+                        Debug.Log("Puzzle complete");
+                        awaitingFade = true;
+                        blackScreen.GetComponent<FadeToBlack>().fadeOut();
+
+                    }
+
+                }
+            }
 
         if (awaitingFade)
         {
             if (blackScreen.GetComponent<FadeToBlack>().completedFade)
             {
-                SceneManager.LoadScene("Puzzle_2");
+                if (GameObject.Find("RotationPuzzle"))
+                {
+                    SceneManager.LoadScene("Puzzle_2");
+                }
+                if (SceneManager.GetActiveScene().name == "Puzzle_2")
+                {
+                    SceneManager.LoadScene("Puzzle_3");
+                }
+                
                 awaitingFade = false;
             }
         }
