@@ -1878,6 +1878,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BunkerEntrance
       objectReference: {fileID: 0}
+    - target: {fileID: 6748130988675179094, guid: 25cb904c43e64244984c7ad347cf446c, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

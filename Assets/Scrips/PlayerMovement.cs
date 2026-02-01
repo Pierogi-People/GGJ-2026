@@ -25,6 +25,14 @@ public class PlayerMovement : MonoBehaviour
 
         maskPanel = GameObject.Find("MaskPanel");
         maskPanel.SetActive(maskEnabledDefault);
+        if (maskPanel.activeSelf)
+        {
+            gameObject.GetComponent<AudioSource>().Play();
+        }
+        else
+        {
+            gameObject.GetComponent<AudioSource>().Stop();
+        }
     }
 
     void Update()

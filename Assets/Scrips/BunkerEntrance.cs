@@ -50,6 +50,7 @@ public class BunkerEntrance : MonoBehaviour
             if (!speechTriggered)
             {
                 GameObject.Find("SpeechManager").GetComponent<waterSpeechManager>().SpeakSpeech2();
+                speechTriggered = true;
             }
         }
     }
