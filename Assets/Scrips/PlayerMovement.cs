@@ -59,5 +59,14 @@ public class PlayerMovement : MonoBehaviour
         }
 
         maskPanel.SetActive(!maskPanel.activeSelf);
+
+        if (maskPanel.activeSelf)
+        {
+            gameObject.GetComponent<AudioSource>().Play();
+        }
+        else
+        {
+            gameObject.GetComponent<AudioSource>().Stop();
+        }
     }
 }

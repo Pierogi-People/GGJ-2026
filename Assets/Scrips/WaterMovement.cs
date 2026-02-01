@@ -19,6 +19,7 @@ public class WaterMovement : MonoBehaviour
 
         maskPanel = GameObject.Find("MaskPanel");
         maskPanel.SetActive(true);
+        gameObject.GetComponent<AudioSource>().Play();
     }
 
     void Update()

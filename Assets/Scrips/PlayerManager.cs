@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem.LowLevel;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -11,9 +10,6 @@ public class PlayerManager : MonoBehaviour
     private float handTimer;
 
     public float timeBeforeFadeIn = 1f;
-
-    public UnityEngine.Audio.AudioResource splatSound;
-    public float splatVolume = 1f;
 
     private bool fadeTriggered = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -75,7 +71,6 @@ public class PlayerManager : MonoBehaviour
         leftHandPanel.SetActive(true);
         handActive = true;
         handTimer = handDuration;
-        PlaySplat();
     }
 
     void ActivateHand()
@@ -83,13 +78,5 @@ public class PlayerManager : MonoBehaviour
         handPanel.SetActive(true);
         handActive = true;
         handTimer = handDuration;
-        PlaySplat();
-    }
-
-    void PlaySplat()
-    {
-        gameObject.GetComponent<AudioSource>().resource = splatSound;
-        gameObject.GetComponent<AudioSource>().volume = splatVolume;
-        gameObject.GetComponent<AudioSource>().Play();
     }
 }
