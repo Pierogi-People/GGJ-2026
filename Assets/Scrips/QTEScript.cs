@@ -7,7 +7,7 @@ public class QTEScript : MonoBehaviour
     private string[] qteChars = { "F", "E", "T", "T", "Y", "W", "A", "P", "T", "R", "A", "P", "Q", "U", "E", "E", "N"};
     private KeyCode[] qteInputs = { KeyCode.F, KeyCode.E, KeyCode.T, KeyCode.T, KeyCode.Y, KeyCode.W, KeyCode.A, KeyCode.P, KeyCode.T, KeyCode.R, KeyCode.A, KeyCode.P, KeyCode.Q, KeyCode.U, KeyCode.E, KeyCode.E, KeyCode.N };
 
-    public float timePerEvent = 1f;
+    public float timePerEvent = 1.5f;
     private float timer;
     private float maxQTEs;
     private int completedQTEs;
@@ -85,7 +85,7 @@ public class QTEScript : MonoBehaviour
                 }
 
                 completedQTEs++;
-                timePerEvent -= 0.02f;
+                timePerEvent -= 0.05f;
 
                 if (completedQTEs >= maxQTEs)
                 {
@@ -103,6 +103,7 @@ public class QTEScript : MonoBehaviour
 
     void StartQTESequence()
     {
+        timePerEvent = 1.5f;
         buffer = false;
         colourFlashTimer = 1.5f;
         failurePanel.SetActive(false);
