@@ -1319,6 +1319,53 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 517918161}
   m_SourcePrefab: {fileID: 100100000, guid: 239f732d8f10ff142b691f9f1e09feac, type: 3}
+--- !u!1 &898191817
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 898191820}
+  - component: {fileID: 898191819}
+  m_Layer: 0
+  m_Name: SpeechManger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &898191819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898191817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfc11567a8c4d7e40a6d21fc4b5a6dee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: 1
+  speech: {fileID: 8300000, guid: e38f33f2842a29c4a93ae33d1276194b, type: 3}
+  speech2: {fileID: 8300000, guid: 8125bdf3714527241b0456cb63d1f5a0, type: 3}
+--- !u!4 &898191820
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898191817}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.64, y: 5.95, z: 7.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &932656683
 GameObject:
   m_ObjectHideFlags: 0
@@ -2986,3 +3033,4 @@ SceneRoots:
   - {fileID: 11103262}
   - {fileID: 408595040}
   - {fileID: 443492767}
+  - {fileID: 898191820}
