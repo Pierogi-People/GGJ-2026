@@ -22,6 +22,7 @@ public class transitionToFinalRoom : MonoBehaviour
             {
                 awaitingFade = true;
                 blackScreen.GetComponent<FadeToBlack>().fadeOut();
+                gameObject.GetComponent<AudioSource>().Play();
             }
         }
 
@@ -29,7 +30,7 @@ public class transitionToFinalRoom : MonoBehaviour
         {
             if (blackScreen.GetComponent<FadeToBlack>().completedFade)
             {
-                //SceneManager.LoadScene("Puzzle_1");
+                SceneManager.LoadScene("Final Room");
                 awaitingFade = false;
             }
         }

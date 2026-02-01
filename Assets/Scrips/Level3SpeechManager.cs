@@ -8,7 +8,6 @@ public class Level3SpeechManager : MonoBehaviour
 
     public float speech1Delay = 2f;
     public bool awaitingSpeech1End = false;
-    private bool speechTriggered = false;
 
     public float volume = 1f;
 

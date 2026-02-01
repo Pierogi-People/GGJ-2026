@@ -53,9 +53,10 @@ public class TheaAnotheaAudio : MonoBehaviour
 
     IEnumerator StartFinalSequence()
     {
+        yield return StartCoroutine(WaitForFadeIn());
         if (!skip)
         {
-            yield return StartCoroutine(WaitForFadeIn());
+            
 
             Debug.Log("Faded In");
 
@@ -78,13 +79,18 @@ public class TheaAnotheaAudio : MonoBehaviour
             theaLight.SetActive(false);
             yield return StartCoroutine(PlayAudioAndWait(prenukeConvo));
         }
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         nuke.SetActive(true);
         yield return new WaitForSeconds(1);
 
         yield return StartCoroutine(PlayAudioAndWait(postnukeConvo));
 
+
+        
+        GameObject.Find("Atomic_Bomb").GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(0.8f);
         finalFlash.SetActive(true);
+        yield return new WaitForSeconds(2);
 
         SceneManager.LoadScene("Credits");
         yield return null;

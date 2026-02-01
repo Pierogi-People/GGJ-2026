@@ -841,7 +841,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 79fa7b31a1ed0db4c86c3eae0b24aaca, type: 3}
   m_Resource: {fileID: 8300000, guid: 79fa7b31a1ed0db4c86c3eae0b24aaca, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.302
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1058,6 +1058,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 11103262}
     m_Modifications:
+    - target: {fileID: 2373526560526030196, guid: 6b55edd2e4ad92747805c4d06cdae3d3, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4883330519438062663, guid: 6b55edd2e4ad92747805c4d06cdae3d3, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5208393695469442245, guid: 6b55edd2e4ad92747805c4d06cdae3d3, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1065,6 +1073,10 @@ PrefabInstance:
     - target: {fileID: 6013455418590604047, guid: 6b55edd2e4ad92747805c4d06cdae3d3, type: 3}
       propertyPath: far clip plane
       value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8084522103174660327, guid: 6b55edd2e4ad92747805c4d06cdae3d3, type: 3}
+      propertyPath: boatAmbVolume
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8102333016124311202, guid: 6b55edd2e4ad92747805c4d06cdae3d3, type: 3}
       propertyPath: m_LocalPosition.x
