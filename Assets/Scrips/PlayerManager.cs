@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -12,6 +14,13 @@ public class PlayerManager : MonoBehaviour
     public float timeBeforeFadeIn = 1f;
 
     private bool fadeTriggered = false;
+
+    public float boatAmbVolume = 1f;
+    public AudioResource boatAmbience;
+    public float seaAmbVolume = 1f;
+    public AudioResource seaAmbience;
+    public float bunkerAmbVolume = 1f;
+    public AudioResource bunkerAmbience;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,6 +32,23 @@ public class PlayerManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = false;
+
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "above_ocean":
+                GameObject.Find("Ambience").GetComponent<AudioSource>().resource = boatAmbience;
+                GameObject.Find("Ambience").GetComponent<AudioSource>().volume = boatAmbVolume;
+                break;
+            case "Swimming Scene":
+                GameObject.Find("Ambience").GetComponent<AudioSource>().resource = seaAmbience;
+                GameObject.Find("Ambience").GetComponent<AudioSource>().volume = seaAmbVolume;
+                break;
+            default:
+                GameObject.Find("Ambience").GetComponent<AudioSource>().resource = bunkerAmbience;
+                GameObject.Find("Ambience").GetComponent<AudioSource>().volume = bunkerAmbVolume;
+                break;
+        }
+        GameObject.Find("Ambience").GetComponent<AudioSource>().Play();
     }
 
     // Update is called once per frame
