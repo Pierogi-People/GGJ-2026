@@ -1398,7 +1398,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 0be995838756d9f4a8ad0ff7b9586127, type: 3}
   m_Resource: {fileID: 8300000, guid: 0be995838756d9f4a8ad0ff7b9586127, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1593,6 +1593,56 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 100528740}
   m_SourcePrefab: {fileID: 100100000, guid: 5368ce38aab888840a6d92496aca90a9, type: 3}
+--- !u!1 &729717217
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 729717219}
+  - component: {fileID: 729717218}
+  m_Layer: 0
+  m_Name: SpeechDirector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &729717218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729717217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48d16711a98400140ae44488b31edfb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speech1: {fileID: 8300000, guid: 0c330496dedd274439214341d9bb3e0d, type: 3}
+  KeyReact: {fileID: 8300000, guid: cb78e448298994c4e83b808753f164ca, type: 3}
+  BreadReact: {fileID: 8300000, guid: ac7ea0af950814f4e87edf4cd38ea4b7, type: 3}
+  BreadBetter: {fileID: 8300000, guid: 44d5dc924eb13d14b8d15329d02c8f02, type: 3}
+  volume: 1
+  ignore: 0
+--- !u!4 &729717219
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729717217}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.79696, y: 1.36552, z: 0.72203}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &740948971
 GameObject:
   m_ObjectHideFlags: 0
@@ -3519,6 +3569,96 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2619086233303812490, guid: 5368ce38aab888840a6d92496aca90a9, type: 3}
+--- !u!1 &1819194139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1819194142}
+  - component: {fileID: 1819194141}
+  - component: {fileID: 1819194140}
+  - component: {fileID: 1819194143}
+  m_Layer: 0
+  m_Name: Box Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1819194140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819194139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 0
+  priority: 0
+  blendDistance: 1
+  weight: 1
+  sharedProfile: {fileID: 0}
+--- !u!65 &1819194141
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819194139}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1819194142
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819194139}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.918, z: -1.64}
+  m_LocalScale: {x: 6.290516, y: 4.5061, z: 6.3207064}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1819194143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819194139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48d16711a98400140ae44488b31edfb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speech1: {fileID: 0}
+  KeyReact: {fileID: 0}
+  BreadReact: {fileID: 0}
+  BreadBetter: {fileID: 0}
+  volume: 1
+  ignore: 1
 --- !u!65 &1830136975
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3758,7 +3898,7 @@ GameObject:
   - component: {fileID: 9212622950273824136}
   - component: {fileID: 1165613448}
   m_Layer: 0
-  m_Name: default
+  m_Name: pane
   m_TagString: Breadkey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4165,7 +4305,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6147638813488945966}
   m_Layer: 0
-  m_Name: pane (1)
+  m_Name: BreadSmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4377,3 +4517,5 @@ SceneRoots:
   - {fileID: 240615550}
   - {fileID: 1703761673}
   - {fileID: 546044669}
+  - {fileID: 729717219}
+  - {fileID: 1819194142}
