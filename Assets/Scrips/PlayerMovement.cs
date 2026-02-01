@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public float tiltSpeed;
     private GameObject maskPanel;
     public bool maskEnabledDefault = false;
+    public bool canUseMask = true;
     #endregion
 
     private void Start()
@@ -52,6 +53,11 @@ public class PlayerMovement : MonoBehaviour
 
     void ToggleMask()
     {
+        if (!canUseMask)
+        {
+            return;
+        }
+
         maskPanel.SetActive(!maskPanel.activeSelf);
     }
 }
