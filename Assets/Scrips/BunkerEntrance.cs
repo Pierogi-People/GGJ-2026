@@ -7,6 +7,8 @@ public class BunkerEntrance : MonoBehaviour
     private bool awaitingFade;
     private GameObject blackScreen;
 
+    private bool speechTriggered = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,7 +23,7 @@ public class BunkerEntrance : MonoBehaviour
 
         if (playerInside)
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.F) && GameObject.Find("SpeechManager").GetComponent<waterSpeechManager>().speechFinished)
             {
                 gameObject.GetComponent<AudioSource>().Play();
                 awaitingFade = true;
@@ -44,6 +46,11 @@ public class BunkerEntrance : MonoBehaviour
         if (other.tag == "Player")
         {
             playerInside = true;
+
+            if (!speechTriggered)
+            {
+                GameObject.Find("SpeechManager").GetComponent<waterSpeechManager>().SpeakSpeech2();
+            }
         }
     }
 
