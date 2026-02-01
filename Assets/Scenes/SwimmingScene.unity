@@ -198,7 +198,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volume: 1
-  speech1: {fileID: 0}
+  speechFinished: 0
+  awaitingEndOfSpeech: 0
+  speech1: {fileID: 8300000, guid: b18550f34e96c3f41b986ca5cc23c213, type: 3}
+  speech2: {fileID: 8300000, guid: 108854faa0284604383c24f7b9673f53, type: 3}
+  speech3: {fileID: 8300000, guid: fe344ab4a77d6fd48b0460335135a176, type: 3}
 --- !u!4 &25730035
 Transform:
   m_ObjectHideFlags: 0
