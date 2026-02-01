@@ -39,6 +39,7 @@ public class EnterWater : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            gameObject.GetComponent<AudioSource>().Play();
             awaitingFade = true;
             blackScreen.GetComponent<FadeToBlack>().fadeOut();
         }
