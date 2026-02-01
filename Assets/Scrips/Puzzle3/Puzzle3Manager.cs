@@ -8,6 +8,7 @@ public class Puzzle3Manager : MonoBehaviour
     
     public Boolean Clear;
     public Boolean Completed = false;
+    public bool linePlayed = false;
     public GameObject exitLight;
     public bool Check1;
     public bool Check2;
@@ -30,6 +31,11 @@ public class Puzzle3Manager : MonoBehaviour
         if (Check1 == true && Check2 == true && Check3 == true && Check4 == true)
         {
             Clear = true;
+            if (!linePlayed)
+            {
+                GameObject.Find("SpeechDirector").GetComponent<Level3SpeechManager>().SpeakSpeech2();
+                linePlayed = true;
+            }
         }
         else Clear = false;
     }
