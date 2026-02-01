@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Puzzle_2.unity
     guid: 664c78b7304abd940aa227995dfb7891
+  - enabled: 1
+    path: Assets/Scenes/Puzzle_3.unity
+    guid: 5231d80f11ec7af429c927ea6930a5c9
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

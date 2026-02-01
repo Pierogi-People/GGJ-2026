@@ -23,6 +23,7 @@ public class BunkerEntrance : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
+                gameObject.GetComponent<AudioSource>().Play();
                 awaitingFade = true;
                 blackScreen.GetComponent<FadeToBlack>().fadeOut();
             }

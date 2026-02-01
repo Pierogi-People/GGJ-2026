@@ -19,6 +19,7 @@ TagManager:
   - TeleportingPlane
   - IntroVideo
   - ExitLight
+  - Button
   layers:
   - Default
   - TransparentFX

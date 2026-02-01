@@ -7,6 +7,8 @@ public class Puzzle3Manager : MonoBehaviour
 {
     
     public Boolean Clear;
+    public Boolean Completed = false;
+    public GameObject exitLight;
     public bool Check1;
     public bool Check2;
     public bool Check3;
@@ -32,15 +34,16 @@ public class Puzzle3Manager : MonoBehaviour
         else Clear = false;
     }
 
-    void Press()
+    public void hitButton()
     {
-        if (Clear == true)
+        GameObject btn = GameObject.FindGameObjectWithTag("Button");
+        var btnColour = btn.GetComponent<Renderer>();
+        bool completed = gameObject.GetComponent<Puzzle3Manager>().Clear;
+        if (completed == true)
         {
-            //open door
-        }
-        else
-        {
-            //play voice line about it being the wrong code
+            exitLight.GetComponent<Light>().color = Color.green;
+            btnColour.material.SetColor("_BaseColor", Color.green);
+            Completed = true;
         }
     }
 }
