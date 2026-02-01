@@ -27,6 +27,10 @@ public class QTEScript : MonoBehaviour
     private bool initiated = false;
     private bool buffer = false;
 
+    private bool playerInside;
+    public bool defused = false;
+    private GameObject bombVolume;
+
     public AudioResource beep;
     public AudioResource blowUp;
 
@@ -40,6 +44,7 @@ public class QTEScript : MonoBehaviour
         promptText = GameObject.Find("QTEPrompt");
         timerBar = GameObject.Find("CountDownOuter");
         canvas = GameObject.Find("QTECanvas");
+        bombVolume = GameObject.Find("BombVolume");
 
         failurePanel = GameObject.Find("FailurePanel");
         failurePanel.SetActive(false);
@@ -52,7 +57,8 @@ public class QTEScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && !initiated)
+        playerInside = bombVolume.GetComponent<BombVolume>().playerInside;
+        if (Input.GetKeyDown(KeyCode.F) && !initiated && playerInside)
         {
             StartQTESequence();
         }
@@ -140,6 +146,7 @@ public class QTEScript : MonoBehaviour
     void QTEWon()
     {
         initiated = false;
+        defused = true;
         canvas.GetComponent<Canvas>().enabled = false;
         Camera.main.GetComponentInParent<PlayerMovement>().enabled = true;
     }
@@ -149,4 +156,6 @@ public class QTEScript : MonoBehaviour
         gameObject.GetComponent<AudioSource>().resource = beep;
         gameObject.GetComponent<AudioSource>().Play();
     }
+
+
 }

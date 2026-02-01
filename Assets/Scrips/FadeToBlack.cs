@@ -6,7 +6,7 @@ public class FadeToBlack : MonoBehaviour
 
     private bool fadingOut = false;
     private bool fadingIn = false;
-    private float alpha = 1f;
+    public float alpha = 1f;
     public bool completedFade = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
