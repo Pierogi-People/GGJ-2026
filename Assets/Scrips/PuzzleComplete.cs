@@ -26,11 +26,11 @@ public class PuzzleComplete : MonoBehaviour
 
             if (Mathf.Abs(zRotation) > 1f)
             {
-                
+
                 return false;
             }
         }
-        
+
         return true;
     }
 
@@ -38,11 +38,11 @@ public class PuzzleComplete : MonoBehaviour
     {
         if (!completed)
         {
-            if (SceneManager.GetActiveScene().name == "Puzzle_1") { 
+            if (SceneManager.GetActiveScene().name == "Puzzle_1")
+            {
                 if (TileRotationCorrect())
                 {
                     completed = true;
-                    Debug.Log("Puzzle Complete");
                 }
             }
             if (SceneManager.GetActiveScene().name == "Puzzle_2")
@@ -50,32 +50,31 @@ public class PuzzleComplete : MonoBehaviour
                 if (GameObject.Find("BreadKey") == null)
                 {
                     completed = true;
-                    Debug.Log("bread Complete");
                 }
             }
-            
+
         }
-        if(SceneManager.GetActiveScene().name == "Puzzle_1")
+        if (SceneManager.GetActiveScene().name == "Puzzle_1")
         {
             if (GameObject.Find("RotationPuzzle").GetComponent<PuzzleComplete>().completed)
             {
                 GameObject.Find("ExitLight").GetComponent<Light>().color = Color.green;
             }
-        }else if (SceneManager.GetActiveScene().name == "Puzzle_2")
+        }
+        else if (SceneManager.GetActiveScene().name == "Puzzle_2")
         {
             if (GameObject.Find("BreadKey") == null)
             {
                 GameObject.Find("ExitLight").GetComponent<Light>().color = Color.green;
-                Debug.Log("bread Complete");
             }
         }
 
 
-            if (playerInside && Input.GetKeyDown(KeyCode.F))
-            {
-                Debug.Log("Hit Inside");
+        if (playerInside && Input.GetKeyDown(KeyCode.F))
+        {
+            Debug.Log("Hit Inside");
 
-                if(SceneManager.GetActiveScene().name == "Puzzle_1")
+            if (SceneManager.GetActiveScene().name == "Puzzle_1")
             {
                 if (GameObject.Find("RotationPuzzle").GetComponent<PuzzleComplete>().completed)
                 {
@@ -84,18 +83,18 @@ public class PuzzleComplete : MonoBehaviour
                     blackScreen.GetComponent<FadeToBlack>().fadeOut();
                 }
             }
-                if (SceneManager.GetActiveScene().name == "Puzzle_2")
+            if (SceneManager.GetActiveScene().name == "Puzzle_2")
+            {
+                if (GameObject.Find("BreadKey") == null)
                 {
-                    if (GameObject.Find("BreadKey") == null)
-                    {
-                        gameObject.GetComponent<AudioSource>().Play();
-                        awaitingFade = true;
-                        blackScreen.GetComponent<FadeToBlack>().fadeOut();
-
-                    }
+                    gameObject.GetComponent<AudioSource>().Play();
+                    awaitingFade = true;
+                    blackScreen.GetComponent<FadeToBlack>().fadeOut();
 
                 }
+
             }
+        }
 
         if (awaitingFade)
         {
@@ -109,7 +108,7 @@ public class PuzzleComplete : MonoBehaviour
                 {
                     SceneManager.LoadScene("Puzzle_3");
                 }
-                
+
                 awaitingFade = false;
             }
         }

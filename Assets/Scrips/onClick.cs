@@ -17,6 +17,7 @@ public class onClick : MonoBehaviour
                 }
                 if (hit.transform.tag == "Breadkey")
                 {
+                    GameObject.Find("Eating").GetComponent<AudioSource>().Play();
                     hit.transform.gameObject.SetActive(false);
                 }
 

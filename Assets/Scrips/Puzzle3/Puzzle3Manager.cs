@@ -42,6 +42,7 @@ public class Puzzle3Manager : MonoBehaviour
         if (completed == true)
         {
             exitLight.GetComponent<Light>().color = Color.green;
+            exitLight.GetComponent<AudioSource>().Play();
             btnColour.material.SetColor("_BaseColor", Color.green);
             Completed = true;
         }
