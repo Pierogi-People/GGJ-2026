@@ -8,6 +8,7 @@ public class Puzzle3Manager : MonoBehaviour
     
     public Boolean Clear;
     public Boolean Completed = false;
+    public GameObject exitLight;
     public bool Check1;
     public bool Check2;
     public bool Check3;
@@ -40,6 +41,7 @@ public class Puzzle3Manager : MonoBehaviour
         bool completed = gameObject.GetComponent<Puzzle3Manager>().Clear;
         if (completed == true)
         {
+            exitLight.GetComponent<Light>().color = Color.green;
             btnColour.material.SetColor("_BaseColor", Color.green);
             Completed = true;
         }
