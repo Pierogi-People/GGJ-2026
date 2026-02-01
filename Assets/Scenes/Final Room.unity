@@ -3284,12 +3284,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b2e19ab9ead38d4bb442de4b9a63d67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theaCall: {fileID: 8300000, guid: 79fa7b31a1ed0db4c86c3eae0b24aaca, type: 3}
-  theaConvo: {fileID: 8300000, guid: 79fa7b31a1ed0db4c86c3eae0b24aaca, type: 3}
-  theaConvo2: {fileID: 8300000, guid: 79fa7b31a1ed0db4c86c3eae0b24aaca, type: 3}
-  anotheraConvo: {fileID: 8300000, guid: 79fa7b31a1ed0db4c86c3eae0b24aaca, type: 3}
-  prenukeConvo: {fileID: 8300000, guid: 79fa7b31a1ed0db4c86c3eae0b24aaca, type: 3}
-  postnukeConvo: {fileID: 8300000, guid: 79fa7b31a1ed0db4c86c3eae0b24aaca, type: 3}
+  theaCall: {fileID: 8300000, guid: d78f34cfd07e975458760da0db663d0a, type: 3}
+  theaConvo: {fileID: 8300000, guid: 11274eb357bed684d9c40970fa0c1766, type: 3}
+  theaConvo2: {fileID: 8300000, guid: 5b1578d3511088540a78570833a8b1c8, type: 3}
+  anotheraConvo: {fileID: 8300000, guid: f59e9b727452d79498940a9f21a0517d, type: 3}
+  prenukeConvo: {fileID: 8300000, guid: 89bb9e5358ffa334d84e3397995f0838, type: 3}
+  postnukeConvo: {fileID: 8300000, guid: 23e785d14437bd74ab89ee497aea08f0, type: 3}
   playerAudio: {fileID: 353977783}
   playerMovement: {fileID: 353977782}
   FadeToBlack: {fileID: 586067562}
