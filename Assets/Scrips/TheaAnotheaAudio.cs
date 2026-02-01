@@ -1,5 +1,7 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class TheaAnotheaAudio : MonoBehaviour
 {
@@ -32,50 +34,59 @@ public class TheaAnotheaAudio : MonoBehaviour
     public GameObject bombLight;
     public QTEScript QTE;
     public GameObject bombFlash;
-    public GameObject nuke; 
-
+    public GameObject nuke;
+    public GameObject finalFlash;
+    public bool skip;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
         playerAudio.loop = false;
-        playerMovement.enabled = false;
+        if (!skip) {
+            playerMovement.enabled = false;
+        }
+        
         StartCoroutine(StartFinalSequence());
+        
     }
 
     IEnumerator StartFinalSequence()
     {
-        yield return StartCoroutine(WaitForFadeIn());
-        
-        Debug.Log("Faded In");
+        if (!skip)
+        {
+            yield return StartCoroutine(WaitForFadeIn());
 
-        yield return StartCoroutine(PlayAudioAndWait(theaCall));
+            Debug.Log("Faded In");
 
-        theaLight.SetActive(true);
-        Debug.Log("tealight");
+            yield return StartCoroutine(PlayAudioAndWait(theaCall));
 
-        yield return StartCoroutine(PlayAudioAndWait(theaConvo));
+            theaLight.SetActive(true);
+            Debug.Log("tealight");
 
-        bombLight.SetActive(true);
-        playerMovement.enabled = true;
-        Debug.Log("bomb-on");
-        yield return StartCoroutine(WaitForDefuse());
+            yield return StartCoroutine(PlayAudioAndWait(theaConvo));
+
+            bombLight.SetActive(true);
+            playerMovement.enabled = true;
+            Debug.Log("bomb-on");
+            yield return StartCoroutine(WaitForDefuse());
 
 
-        yield return StartCoroutine(PlayAudioAndWait(theaConvo2));
-        anotheaLight.SetActive(true);
-        yield return StartCoroutine(PlayAudioAndWait(anotheraConvo));
-        theaLight.SetActive(false);
-        yield return StartCoroutine(PlayAudioAndWait(prenukeConvo));
-
+            yield return StartCoroutine(PlayAudioAndWait(theaConvo2));
+            anotheaLight.SetActive(true);
+            yield return StartCoroutine(PlayAudioAndWait(anotheraConvo));
+            theaLight.SetActive(false);
+            yield return StartCoroutine(PlayAudioAndWait(prenukeConvo));
+        }
         yield return new WaitForSeconds(1);
         nuke.SetActive(true);
         yield return new WaitForSeconds(1);
 
         yield return StartCoroutine(PlayAudioAndWait(postnukeConvo));
 
+        finalFlash.SetActive(true);
 
+        SceneManager.LoadScene("Credits");
         yield return null;
     }
 
