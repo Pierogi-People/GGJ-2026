@@ -154,7 +154,6 @@ GameObject:
   - component: {fileID: 8084522103174660327}
   - component: {fileID: 6149079247568004518}
   - component: {fileID: -779802142677255978}
-  - component: {fileID: -5682563167087778589}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -323,6 +322,7 @@ MonoBehaviour:
   handDuration: 0.5
   timeBeforeFadeIn: 1
   splatSound: {fileID: 8300000, guid: ae6f488c98845894faf9be93e8306e2b, type: 3}
+  splatVolume: 1
 --- !u!33 &6149079247568004518
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -428,11 +428,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!81 &-5682563167087778589
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5208393695469442245}
-  m_Enabled: 1

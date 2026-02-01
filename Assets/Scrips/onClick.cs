@@ -18,6 +18,11 @@ public class onClick : MonoBehaviour
                 {
                     hit.transform.gameObject.SetActive(false);
                 }
+
+                if (GameObject.FindGameObjectWithTag("Button").GetComponent<Puzzle3Manager>().Completed)
+                {
+                    return;
+                }
                 if(hit.transform.tag == "code_0")
                 {
                     hit.transform.gameObject.GetComponent<CodePuzzle>().Count += 1;
@@ -33,6 +38,10 @@ public class onClick : MonoBehaviour
                 if(hit.transform.tag == "code_3")
                 {
                     hit.transform.gameObject.GetComponent<CodePuzzle4>().Count += 1;
+                }
+                if(hit.transform.tag == "Button")
+                {
+                    hit.transform.gameObject.GetComponent<Puzzle3Manager>().hitButton();
                 }
             }
         }
