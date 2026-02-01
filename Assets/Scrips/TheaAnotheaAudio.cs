@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
@@ -37,6 +38,7 @@ public class TheaAnotheaAudio : MonoBehaviour
     public GameObject nuke;
     public GameObject finalFlash;
     public bool skip;
+    public UniversalRendererData renderData;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -90,6 +92,7 @@ public class TheaAnotheaAudio : MonoBehaviour
         GameObject.Find("Atomic_Bomb").GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(0.8f);
         finalFlash.SetActive(true);
+        
         yield return new WaitForSeconds(2);
 
         SceneManager.LoadScene("Credits");
