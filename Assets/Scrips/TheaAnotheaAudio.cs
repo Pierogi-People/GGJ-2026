@@ -38,6 +38,8 @@ public class TheaAnotheaAudio : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
+        playerAudio.loop = false;
         playerMovement.enabled = false;
         StartCoroutine(StartFinalSequence());
     }
@@ -66,11 +68,20 @@ public class TheaAnotheaAudio : MonoBehaviour
         yield return StartCoroutine(PlayAudioAndWait(anotheraConvo));
         theaLight.SetActive(false);
         yield return StartCoroutine(PlayAudioAndWait(prenukeConvo));
+
+        yield return new WaitForSeconds(1);
+        nuke.SetActive(true);
+        yield return new WaitForSeconds(1);
+
         yield return StartCoroutine(PlayAudioAndWait(postnukeConvo));
 
 
         yield return null;
     }
+
+
+  
+
     IEnumerator PlayAudioAndWait(AudioClip audioClip)
     {
         playerAudio.clip = audioClip;
@@ -79,7 +90,7 @@ public class TheaAnotheaAudio : MonoBehaviour
         {
             yield return null;
         }
-
+        yield return new WaitForSecondsRealtime(1);
     }
 
     IEnumerator WaitForDefuse()
@@ -94,13 +105,14 @@ public class TheaAnotheaAudio : MonoBehaviour
 
     IEnumerator WaitForFadeIn()
     {
-        while (FadeToBlack.alpha < 0.1f)
+        while (FadeToBlack.alpha < 0.0f)
         {
             Debug.Log(FadeToBlack.alpha);
             yield return null;
         }
+        yield return new WaitForSeconds(3);
 
-        
+
 
 
     }
