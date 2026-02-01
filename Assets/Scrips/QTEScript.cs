@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class QTEScript : MonoBehaviour
@@ -25,6 +26,9 @@ public class QTEScript : MonoBehaviour
 
     private bool initiated = false;
     private bool buffer = false;
+
+    public AudioResource beep;
+    public AudioResource blowUp;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -60,6 +64,7 @@ public class QTEScript : MonoBehaviour
 
             if (colourFlashTimer < 0.75f)
             {
+                Beep();
                 colourFlashTimer = 1.5f;
                 if (QTEPanel.GetComponent<Image>().color == Color.red)
                 {
@@ -128,6 +133,8 @@ public class QTEScript : MonoBehaviour
         failurePanel.SetActive(true);
         QTEPanel.SetActive(false);
         initiated = false;
+        gameObject.GetComponent<AudioSource>().resource = blowUp;
+        gameObject.GetComponent<AudioSource>().Play();
     }
 
     void QTEWon()
@@ -135,5 +142,11 @@ public class QTEScript : MonoBehaviour
         initiated = false;
         canvas.GetComponent<Canvas>().enabled = false;
         Camera.main.GetComponentInParent<PlayerMovement>().enabled = true;
+    }
+
+    void Beep()
+    {
+        gameObject.GetComponent<AudioSource>().resource = beep;
+        gameObject.GetComponent<AudioSource>().Play();
     }
 }

@@ -79,7 +79,7 @@ public class PuzzleComplete : MonoBehaviour
             {
                 if (GameObject.Find("RotationPuzzle").GetComponent<PuzzleComplete>().completed)
                 {
-                    Debug.Log("Puzzle complete");
+                    gameObject.GetComponent<AudioSource>().Play();
                     awaitingFade = true;
                     blackScreen.GetComponent<FadeToBlack>().fadeOut();
                 }
@@ -88,7 +88,7 @@ public class PuzzleComplete : MonoBehaviour
                 {
                     if (GameObject.Find("BreadKey") == null)
                     {
-                        Debug.Log("Puzzle complete");
+                        gameObject.GetComponent<AudioSource>().Play();
                         awaitingFade = true;
                         blackScreen.GetComponent<FadeToBlack>().fadeOut();
 
