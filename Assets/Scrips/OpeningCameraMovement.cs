@@ -7,7 +7,7 @@ public class OpeningCameraMovement : MonoBehaviour
 
     private Vector3 playerCameraPosition;
     private Quaternion playerCameraRotation;
-    private Camera playerCamera;
+    public Camera playerCamera;
     private VideoPlayer introVideo;
     private Vector3 startPosition;
     private bool startMoving;
@@ -23,9 +23,6 @@ public class OpeningCameraMovement : MonoBehaviour
 
     void Start()
     {
-        
-        playerCamera = GameObject.FindGameObjectsWithTag("MainCamera")[0].gameObject.GetComponent<Camera>();
-        
         introVideo = GameObject.FindGameObjectWithTag("IntroVideo").gameObject.GetComponent<VideoPlayer>();
         startRotation = transform.rotation;
         endRotation = playerCamera.transform.rotation;

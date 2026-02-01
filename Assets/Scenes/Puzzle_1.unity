@@ -1532,6 +1532,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7101258080547618409, guid: 6b55edd2e4ad92747805c4d06cdae3d3, type: 3}
+      propertyPath: maskPanel
+      value: 
+      objectReference: {fileID: 1623376498}
+    - target: {fileID: 7101258080547618409, guid: 6b55edd2e4ad92747805c4d06cdae3d3, type: 3}
       propertyPath: maskEnabledDefault
       value: 1
       objectReference: {fileID: 0}
@@ -1677,6 +1681,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fe7a75e42f035442be5f064e6d6c7fc, type: 3}
+--- !u!1 &1623376498 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7809296612400035157, guid: 8fe7a75e42f035442be5f064e6d6c7fc, type: 3}
+  m_PrefabInstance: {fileID: 1623376497}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1754872820
 PrefabInstance:
   m_ObjectHideFlags: 0

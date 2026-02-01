@@ -1050,6 +1050,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1004339435215287037, guid: 239f732d8f10ff142b691f9f1e09feac, type: 3}
+--- !u!20 &533118137 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 6013455418590604047, guid: 6b55edd2e4ad92747805c4d06cdae3d3, type: 3}
+  m_PrefabInstance: {fileID: 562122968}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &562122968
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1074,6 +1079,10 @@ PrefabInstance:
       propertyPath: far clip plane
       value: 10000
       objectReference: {fileID: 0}
+    - target: {fileID: 7101258080547618409, guid: 6b55edd2e4ad92747805c4d06cdae3d3, type: 3}
+      propertyPath: maskPanel
+      value: 
+      objectReference: {fileID: 1622584837}
     - target: {fileID: 8084522103174660327, guid: 6b55edd2e4ad92747805c4d06cdae3d3, type: 3}
       propertyPath: boatAmbVolume
       value: 0.2
@@ -2406,6 +2415,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BaseCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7809296612400035157, guid: 8fe7a75e42f035442be5f064e6d6c7fc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8265388086127084264, guid: 8fe7a75e42f035442be5f064e6d6c7fc, type: 3}
       propertyPath: fadeRate
       value: 4.5
@@ -2733,7 +2746,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d5a07c7edc5d574bae5894d4fc07b20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCamera: {fileID: 533118137}
   transitionSpeed: 1
+--- !u!1 &1622584837 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7809296612400035157, guid: 8fe7a75e42f035442be5f064e6d6c7fc, type: 3}
+  m_PrefabInstance: {fileID: 1462647132}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1633047930 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 239f732d8f10ff142b691f9f1e09feac, type: 3}

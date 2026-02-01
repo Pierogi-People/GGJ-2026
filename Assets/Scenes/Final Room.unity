@@ -752,6 +752,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7101258080547618409, guid: 6b55edd2e4ad92747805c4d06cdae3d3, type: 3}
+      propertyPath: maskPanel
+      value: 
+      objectReference: {fileID: 586067563}
     - target: {fileID: 8102333016124311202, guid: 6b55edd2e4ad92747805c4d06cdae3d3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.12548399
@@ -1334,6 +1338,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f14418d1f636075418a3ce2e7fb2c4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &586067563 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7809296612400035157, guid: 8fe7a75e42f035442be5f064e6d6c7fc, type: 3}
+  m_PrefabInstance: {fileID: 586067561}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &597840135
 PrefabInstance:
   m_ObjectHideFlags: 0

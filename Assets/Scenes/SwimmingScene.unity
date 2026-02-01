@@ -513,6 +513,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1803314887}
   m_SourcePrefab: {fileID: 100100000, guid: 8fe7a75e42f035442be5f064e6d6c7fc, type: 3}
+--- !u!1 &432868100 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7809296612400035157, guid: 8fe7a75e42f035442be5f064e6d6c7fc, type: 3}
+  m_PrefabInstance: {fileID: 432868099}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &678078301
 GameObject:
   m_ObjectHideFlags: 0
@@ -1676,6 +1681,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeRate: 0.5
+  alpha: 1
   completedFade: 0
 --- !u!1001 &1919633450
 PrefabInstance:
@@ -1757,6 +1763,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114936486266638002, guid: d40214a57bb6714488018a0f1b7feb3e, type: 3}
+      propertyPath: maskPanel
+      value: 
+      objectReference: {fileID: 432868100}
     - target: {fileID: 1397714894514321017, guid: d40214a57bb6714488018a0f1b7feb3e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 45.02

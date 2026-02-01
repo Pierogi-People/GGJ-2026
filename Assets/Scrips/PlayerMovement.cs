@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -12,27 +13,26 @@ public class PlayerMovement : MonoBehaviour
     public float lowerCameraBounds;
     private float currentTilt;
     public float tiltSpeed;
-    private GameObject maskPanel;
     public bool maskEnabledDefault = false;
     public bool canUseMask = true;
+    public GameObject maskPanel;
     #endregion
 
-    private void Start()
+    void Start()
     {
         Rigid = gameObject.GetComponent<Rigidbody>();
         Cam = Camera.main;
         currentTilt = 0f;
 
-        maskPanel = GameObject.Find("MaskPanel");
-        maskPanel.SetActive(maskEnabledDefault);
-        if (maskPanel.activeSelf)
-        {
-            gameObject.GetComponent<AudioSource>().Play();
-        }
-        else
-        {
-            gameObject.GetComponent<AudioSource>().Stop();
-        }
+
+            if (maskPanel.activeSelf)
+            {
+                gameObject.GetComponent<AudioSource>().Play();
+            }
+            else
+            {
+                gameObject.GetComponent<AudioSource>().Stop();
+            }
     }
 
     void Update()
