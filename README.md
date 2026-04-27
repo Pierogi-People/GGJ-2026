@@ -1,6 +1,4 @@
-Global Game Jam 2024<br/>
-<br/>
-Came in first place<br/>
+Global Game Jam 2026<br/>
 <br/>
 https://globalgamejam.org/games/2026/untitled-game-1-0<br/>
 <br/>
